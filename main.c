@@ -1,13 +1,7 @@
 #include <stdio.h>
+#include "Fonction.h"
 
 
-void userChoice()
-{
-    printf("Select a direction (N, S, E, W).\n Cancel the previous move(B).\n");
-    printf("Erase the chain (R).\n Restart the level (X).\n");
-    printf("Select another chain (C)\n");
-
-}
 
 int main()
 {
@@ -18,12 +12,7 @@ int main()
                      {' ','1',' ',' ','1'},
                      {' ','1','1','1','1'}
     };
-    for(int i=0; i<5; i++) {
-        for(int j=0; j<5; j++) {
-            printf("%c ", arr[i][j]);
-        }
-        printf("\n");
-    }
+    printGrid(arr[5][5]);
     userChoice();
     int positionx = 0;
     int positiony = 0;
