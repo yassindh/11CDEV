@@ -4,7 +4,9 @@
 
 
 #include <stdio.h>
+#include <stdbool.h>
 #include "Fonction.h"
+#include "Level.h"
 
 void userChoice()
 {
@@ -13,11 +15,22 @@ void userChoice()
     printf("Select another chain (C)\n");
 }
 
-void printGrid(char **level){
-    for(int i=0; i<5; i++) {
-        for(int j=0; j<5; j++) {
-            printf("%c ", level[i][j]);
+void printGrid(levelt level){
+    for(int i=0; i<level.height; i++) {
+        for(int j=0; j<level.width; j++) {
+            printf("%c ", level.grid[i][j]);
         }
         printf("\n");
+    }
+}
+
+void findStart(levelt level){
+    for(int i=0; i<level.height; i++) {
+        for(int j=0; j<level.width; j++) {
+            if(level.grid[i][j] == 'x'){
+                positionx = i;
+                positiony = j;
+            }
+        }
     }
 }

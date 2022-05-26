@@ -1,50 +1,37 @@
 #include <stdio.h>
+#include <stdbool.h>
+#include "Level.h"
 #include "Fonction.h"
 
 
 
 int main()
 {
-    char direction;
-    char arr[5][5] = {{'x','1','1','1',' '},
-                     {' ',' ',' ','1',' '},
-                     {' ','1','1','1',' '},
-                     {' ','1',' ',' ','1'},
-                     {' ','1','1','1','1'}
-    };
-    printGrid(arr[5][5]);
+    char direction[2];
+    printGrid(level2);
     userChoice();
-    int positionx = 0;
-    int positiony = 0;
-    char East = 'e';
-    char West = 'w';
-    char North = 'n';
-    char South = 's';
+    findStart(level2);
     for(int k=0; k<30; ++k){
         printf(" une direction: \n");
-        scanf("%c", &direction);
-        if (direction == East && arr[positionx][positiony+1] == '1') {
+        scanf("%s", direction);
+        if (direction[0] == East && level2.grid[positionx][positiony+1] == '1') {
             positiony += 1;
-            arr[positionx][positiony] = '*';
+            level2.grid[positionx][positiony] = '*';
         }
-        else if(direction == South && arr[positionx+1][positiony] == '1'){
+        else if(direction[0] == South && level2.grid[positionx+1][positiony] == '1'){
             positionx += 1;
-            arr[positionx][positiony] = '*';
+
+            level2.grid[positionx][positiony] = '*';
         }
-        else if(direction == North && arr[positionx-1][positiony] == '1'){
+        else if(direction[0] == North && level2.grid[positionx-1][positiony] == '1'){
             positionx -= 1;
-            arr[positionx][positiony] = '*';
+            level2.grid[positionx][positiony] = '*';
         }
-        else if(direction == West && arr[positionx][positiony-1] == '1'){
+        else if(direction[0] == West && level2.grid[positionx][positiony-1] ==  '1'){
             positiony -= 1;
-            arr[positionx][positiony] = '*';
+            level2.grid[positionx][positiony] = '*';
         }
-        for(int i=0; i<5; i++) {
-            for(int j=0; j<5; j++) {
-                printf("%c ", arr[i][j]);
-            }
-            printf("\n");
-        }
+        printGrid(level2);
     }
 
 

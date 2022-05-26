@@ -1,13 +1,23 @@
-//
-// Created by Yassin on 26/05/2022.
-//
-
 #include "Level.h"
-char Level1[1][4] = {'x','1','1','1'};
+#include <stdbool.h>
 
-char Level2[3][3] = {{' ',' ','1'},
-                     {'1','1','1'},
-                     {'x',' ','1'}};
+int positionx = 0;
+int positiony = 0;
+
+levelt level1 = {
+        {'x','1','1','1'},
+        4,
+        1,
+};
+
+levelt level2 = {
+        {{' ',' ','1'},
+         {'1','1','1'},
+         {'x',' ',' '}},
+         3,
+         3,
+};
+
 
 char Level3[3][3] = {{'1','1','1'},
                      {'1',' ','1'},
