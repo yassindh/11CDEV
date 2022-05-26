@@ -9,7 +9,6 @@ void userChoice()
 
 }
 
-
 int main()
 {
     char direction;
