@@ -10,8 +10,7 @@
 #include "Fonction.h"
 #include "Level.h"
 
-void userChoice()
-{
+void userChoice(){
     printf("Select a direction (N, S, E, W).\n Cancel the previous move(B).\n");
     printf("Erase the chain (R).\n Restart the level (X).\n");
     printf("Select another chain (C)\n");
@@ -51,11 +50,11 @@ void findStart(levelt level){
         }
     }
 }
-;
+
 bool again(levelt level){
     for(int i=0; i<level.height; i++) {
         for(int j=0; j<level.width; j++) {
-            if (level.grid[i][j].place == 0 || level.grid[i][j].place == 0 && level.grid[i][j].state != 0){
+            if (possible(level, i, j)){
                 return true;
             }
         }
@@ -64,8 +63,7 @@ bool again(levelt level){
 }
 
 
-void colorChain(int t,int f)
-{
+void colorChain(int t,int f){
     HANDLE H= GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(H,f*16+t);
 }

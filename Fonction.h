@@ -11,4 +11,5 @@ void printGrid(levelt level);
 void findStart(levelt level);
 bool again(levelt level);
 void colorChain(int t,int f);
+bool possible(levelt level, int i, int j);
 #endif //INC_1CDEV_FONCTION_H
