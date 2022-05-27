@@ -3,7 +3,8 @@
 
 int positionx = 0;
 int positiony = 0;
-
+int startPos[4][2] = {
+};
 levelt level1 = {
         {'x','1','1','1'},
         4,

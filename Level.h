@@ -9,6 +9,8 @@
 #define North 'n'
 #define South 's'
 #define West 'w'
+#define Reset 'x'
+
 typedef struct {
     int state;
     int place;
@@ -19,7 +21,6 @@ typedef struct {
     int width;
     int height;
 }levelt;
-
 
 
 extern levelt level1;
