@@ -9,12 +9,18 @@
 #define North 'n'
 #define South 's'
 #define West 'w'
+typedef struct {
+    int state;
+    int place;
+}cases;
 
 typedef struct {
-    char grid[10][10];
+    cases grid[10][10];
     int width;
     int height;
 }levelt;
+
+
 
 extern levelt level1;
 extern levelt level2;

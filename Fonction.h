@@ -9,4 +9,6 @@
 void userChoice();
 void printGrid(levelt level);
 void findStart(levelt level);
+bool again(levelt level);
+void colorChain(int t,int f);
 #endif //INC_1CDEV_FONCTION_H

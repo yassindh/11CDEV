@@ -5,6 +5,8 @@
 
 #include <stdio.h>
 #include <stdbool.h>
+#include <windows.h>
+#include <stdlib.h>
 #include "Fonction.h"
 #include "Level.h"
 
@@ -18,7 +20,22 @@ void userChoice()
 void printGrid(levelt level){
     for(int i=0; i<level.height; i++) {
         for(int j=0; j<level.width; j++) {
-            printf("%c ", level.grid[i][j]);
+            if (level.grid[i][j].state == -1){
+                colorChain(12,0);
+                printf("%c ", 'x');
+                colorChain(15,0);
+            }
+            else if (level.grid[i][j].state == 0){
+                printf("%c ", ' ');
+            }
+            else if (level.grid[i][j].state == 1 && level.grid[i][j].place == 1){
+                colorChain(12,0);
+                printf("%c ", '1');
+                colorChain(15,0);
+            }
+            else if (level.grid[i][j].state == 1){
+                printf("%c ", '1');
+            }
         }
         printf("\n");
     }
@@ -27,10 +44,29 @@ void printGrid(levelt level){
 void findStart(levelt level){
     for(int i=0; i<level.height; i++) {
         for(int j=0; j<level.width; j++) {
-            if(level.grid[i][j] == 'x'){
+            if(level.grid[i][j].state == -1){
                 positionx = i;
                 positiony = j;
             }
         }
     }
 }
+;
+bool again(levelt level){
+    for(int i=0; i<level.height; i++) {
+        for(int j=0; j<level.width; j++) {
+            if (level.grid[i][j].place == 0 || level.grid[i][j].place == 0 && level.grid[i][j].state != 0){
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+
+void colorChain(int t,int f)
+{
+    HANDLE H= GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(H,f*16+t);
+}
+
