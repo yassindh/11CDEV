@@ -5,15 +5,11 @@
 #include <stdbool.h>
 #ifndef INC_1CDEV_LEVEL_H
 #define INC_1CDEV_LEVEL_H
-#define East 'e'
-#define North 'n'
-#define South 's'
-#define West 'w'
-#define Reset 'x'
 
 typedef struct {
     int state;
     int place;
+    char PreviousDir;
 }cases;
 
 typedef struct {
@@ -21,6 +17,11 @@ typedef struct {
     int width;
     int height;
 }levelt;
+
+typedef struct{
+    char direction;
+    int action;
+}cardinal;
 
 
 extern levelt level1;

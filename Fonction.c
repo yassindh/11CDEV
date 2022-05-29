@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #include "Fonction.h"
 #include "Level.h"
+#include "constVar.h"
 
 void userChoice(){
     printf("Select a direction (N, S, E, W).\n Cancel the previous move(B).\n");
@@ -40,22 +41,25 @@ void printGrid(levelt level){
     }
 }
 
-void findStart(levelt level){
+int findStart(levelt *level, int startPos[][2]){
     int index = 0 ;
-    for(int i=0; i<level.height; i++) {
-        for(int j=0; j<level.width; j++) {
-            if(level.grid[i][j].state == -1){
-                positionx = i;
-                positiony = j;
+    for(int i=0; i<level->height; i++) {
+        for(int j=0; j<level->width; j++) {
+            if(level->grid[i][j].state == -1){
+                startPos[index][0] = j ;
+                startPos[index][1] = i ;
+                level->grid[i][j].place = index + 1;
+                index ++;
             }
         }
     }
+    return index;
 }
 
 bool again(levelt level){
     for(int i=0; i<level.height; i++) {
         for(int j=0; j<level.width; j++) {
-            if (possible(level, i, j)){
+            if (level.grid[i][j].place == 0 && level.grid[i][j].state != 0){
                 return true;
             }
         }
@@ -68,4 +72,6 @@ void colorChain(int t,int f){
     HANDLE H= GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(H,f*16+t);
 }
+
+
 

@@ -1,10 +1,26 @@
 #include "Level.h"
 #include <stdbool.h>
 
-int positionx = 0;
-int positiony = 0;
 int startPos[4][2] = {
 };
+
+cardinal South = {
+        's',
+        1,
+};
+cardinal North = {
+        'n',
+        -1,
+};
+cardinal West = {
+        'w',
+        -1,
+};
+cardinal East = {
+        'e',
+        1,
+};
+
 levelt level1 = {
         {'x','1','1','1'},
         4,
