@@ -73,5 +73,13 @@ void colorChain(int t,int f){
     SetConsoleTextAttribute(H,f*16+t);
 }
 
-
-
+void eraseChain(levelt *level, int chain){
+    for(int i=0; i<level->height; i++) {
+        for(int j=0; j<level->width; j++) {
+            if(level->grid[i][j].place == chain +1){
+                level->grid[i][j].place = 0;
+                level->grid[i][j].PreviousDir = 0 ;
+            }
+        }
+    }
+}

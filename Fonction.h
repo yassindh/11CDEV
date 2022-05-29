@@ -12,4 +12,5 @@ int findStart(levelt *level, int startPos[][2]);
 bool again(levelt level);
 void colorChain(int t,int f);
 bool possible( cases currentCase, cases nextCase);
+void eraseChain(levelt *level, int chain);
 #endif //INC_1CDEV_FONCTION_H
