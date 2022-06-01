@@ -1,7 +1,3 @@
-//
-// Created by Yassin on 26/05/2022.
-//
-
 #include <stdbool.h>
 #ifndef INC_1CDEV_LEVEL_H
 #define INC_1CDEV_LEVEL_H
@@ -24,9 +20,12 @@ typedef struct{
 }cardinal;
 
 
-extern levelt level1;
 extern levelt level2;
-extern int positionx;
-extern int positiony;
+extern levelt level9;
+extern levelt level10;
+extern cardinal South;
+extern cardinal North;
+extern cardinal West;
+extern cardinal East;
 
 #endif //INC_1CDEV_LEVEL_H
