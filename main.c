@@ -1,18 +1,17 @@
 #include <stdio.h>
-#include "Level.h"
 #include "Fonction.h"
+#include "Level.h"
 #include <stdlib.h>
 
 
 int main() {
-    levelt test[] = {level10,level9};
+    levelt test[] = {level1, level2,level3,level4,level5,level6,level7,level8,level9,level10,level11,level12,level13,level14,level15,level16,level17,level18,level19,level20,level21,level22,level23,level24,level25,level26,level27,level28,level29,level30};
     int indexLevel = 0;
     char direction[2];
     int startPos[10][2];
     int chain = 0;
     levelt leveltemp;
-
-    while(indexLevel<= 30){
+    while(indexLevel< 30){
         leveltemp = test[indexLevel];
         findStart(&leveltemp, startPos);
         printGrid(leveltemp);
@@ -27,6 +26,7 @@ int main() {
             system("cls");
             printGrid(leveltemp);
         }
+    system("cls");
     indexLevel++;
     }
     return 0;

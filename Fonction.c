@@ -3,6 +3,7 @@
 #include <windows.h>
 #include "Fonction.h"
 #include "Level.h"
+#include "cardinal.h"
 
 void userChoice(){
     printf("Select a direction (N, S, E, W).\n Cancel the previous move(B).\n");
@@ -16,6 +17,7 @@ void printGrid(levelt level){
             if (level.grid[i][j].state == -1){
                 colorChain(level.grid[i][j].place,0);
                 printf(" x ");
+                colorChain(15,0);
             }
             else if (level.grid[i][j].state == 0){
                 printf("   ");
