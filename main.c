@@ -11,11 +11,12 @@ int main() {
     int startPos[10][2];
     int chain = 0;
     levelt leveltemp;
-    leveltemp = test[indexLevel];
-    findStart(&leveltemp, startPos);
-    printGrid(leveltemp);
-    int numberChain = findStart(&leveltemp, startPos);
+
     while(indexLevel<= 30){
+        leveltemp = test[indexLevel];
+        findStart(&leveltemp, startPos);
+        printGrid(leveltemp);
+        int numberChain = findStart(&leveltemp, startPos);
         while (again(leveltemp)) {
             scanf("%s", direction);
             mouv(&leveltemp, direction[0], chain, startPos);

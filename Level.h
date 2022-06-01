@@ -19,7 +19,6 @@ typedef struct{
     int action;
 }cardinal;
 
-
 extern levelt level2;
 extern levelt level9;
 extern levelt level10;
@@ -27,5 +26,4 @@ extern cardinal South;
 extern cardinal North;
 extern cardinal West;
 extern cardinal East;
-
 #endif //INC_1CDEV_LEVEL_H
